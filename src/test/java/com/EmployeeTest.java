@@ -32,19 +32,28 @@ public class EmployeeTest {
         EmployeeCRUD employeeCRUD = EasyMock.createMock(EmployeeCRUD.class);
         Employee mockEmployee = new Employee();
         mockEmployee.setId(empId);
-        mockEmployee.setFirstName("Samson");
+        mockEmployee.setFirstName("Name:Samson");
         mockEmployee.setLastName("Francis");
         mockEmployee.setExperience(2);
         EasyMock.expect(employeeCRUD.fetchEmployee(EasyMock.isA(Integer.class))).andReturn(mockEmployee);
         EasyMock.replay(employeeCRUD);
-        
+
         EmployeeAPI employeeAPI = new EmployeeAPI();
         employeeAPI.setEmployeeCRUD(employeeCRUD);
         Employee returned = employeeAPI.getEmployeeDetails(empId);
 
 //        assertNotEquals(actual, returned);
-        assertEquals(actual, returned);
+//        assertEquals(actual, returned);
     }
 
 
+    @Test
+    public void testMathOp(){
+
+        EmployeeCRUD employeeCRUD = new EmployeeCRUD();
+        int rval = employeeCRUD.mathOp(1,2);
+        assertEquals(3,rval);
+
+
+    }
 }

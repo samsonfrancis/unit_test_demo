@@ -26,7 +26,7 @@ public class EmployeeCRUD {
             employee.setId(employeeId);
 
             while (rs.next()) {
-                employee.setFirstName(rs.getString("first_name"));
+                employee.setFirstName("Name:" + rs.getString("first_name"));
                 employee.setLastName(rs.getString("last_name"));
                 employee.setExperience(rs.getInt("experience"));
             }
@@ -36,5 +36,9 @@ public class EmployeeCRUD {
         }
 
         return null;
+    }
+
+    public int mathOp(int a, int b){
+        return a * b;
     }
 }
