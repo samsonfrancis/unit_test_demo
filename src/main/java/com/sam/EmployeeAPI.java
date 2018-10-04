@@ -1,7 +1,11 @@
 package com.sam;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class EmployeeAPI {
-    private EmployeeCRUD employeeCRUD = new EmployeeCRUD();
+    @Getter@Setter
+    private EmployeeCRUD employeeCRUD = null;
 
     public Employee getEmployeeDetails(Integer empId) {
         if (empId == null) {
